@@ -16,6 +16,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+// trying do spring security configuration method
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
