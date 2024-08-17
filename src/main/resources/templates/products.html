@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BUYSELL</title>
+</head>
+<body>
+<h1>BUYSELL</h1>
+<hr>
+<h4>Товары со всей России</h4>
+<form action="/" method="get">
+    Поиск по названию объявления: <input type="text" name="title"><br>
+    <input type="submit" value="Поиск"/>
+</form>
+<div th:each="product : ${products}">
+    <p>
+        <b th:text="${product.title}">Название</b>
+        <span th:text="${product.price}">Цена</span> руб. |
+        <a th:href="@{/product/{id}(id=${product.id})}">Подробнее...</a>
+    </p>
+</div>
+<hr>
+<h3>Создать новый товар</h3>
+<form action="/product/create" method="post">
+    Название объявления: <input type="text" name="title"/><br><br>
+    Описание объявления: <input type="text" name="description"/><br><br>
+    Цена: <input type="number" name="price"/><br><br>
+    Город: <input type="text" name="city"/><br><br>
+    Имя автора: <input type="text" name="author"/><br><br>
+    <input type="submit" value="Добавить товар">
+</form>
+</body>
+</html>
